@@ -360,7 +360,8 @@
     "tags": [
       "KeyItem",
       "Unique",
-      "Tracker"
+      "Tracker",
+      "JohtoOnlyRemoved"
     ]
   },
   "MYSTERY_EGG": {

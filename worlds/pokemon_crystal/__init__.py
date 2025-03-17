@@ -93,8 +93,8 @@ class PokemonCrystalWorld(World):
                     and self.options.randomize_badges == RandomizeBadges.option_completely_random):
                 self.multiworld.local_early_items[self.player]["Storm Badge"] = 1
 
-        if (self.options.randomize_badges != RandomizeBadges.option_completely_random and
-            self.options.radio_tower_badges.value > 7 if self.options.johto_only else 15):
+        if self.options.randomize_badges.value != RandomizeBadges.option_completely_random and self.options.radio_tower_badges.value > (
+                7 if self.options.johto_only else 15):
             self.options.radio_tower_badges.value = 7 if self.options.johto_only else 15
             logging.warning(
                 "Pokemon Crystal: Radio Tower Badges >%d incompatible with vanilla or shuffled badges. "
@@ -180,7 +180,7 @@ class PokemonCrystalWorld(World):
                     default_itempool += [self.create_item_by_code(item_code + 256)]
                 else:
                     default_itempool += [self.create_item_by_code(item_code)]
-            elif len(add_badges):
+            elif add_badges:
                 default_itempool += [self.create_item_by_code(add_badges.pop())]
             elif self.random.randint(0, 100) < total_trap_weight:
                 default_itempool += [get_random_trap()]
@@ -188,6 +188,10 @@ class PokemonCrystalWorld(World):
                 default_itempool += [self.create_item_by_const_name(get_random_filler_item(self.random))]
             else:
                 default_itempool += [self.create_item_by_code(item_code)]
+
+        if self.options.johto_only.value != JohtoOnly.option_off:
+            default_itempool = [item if "JohtoOnlyRemoved" not in item.tags else self.create_item_by_const_name(
+                get_random_filler_item(self.random)) for item in default_itempool]
 
         self.multiworld.itempool += default_itempool
 
