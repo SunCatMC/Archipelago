@@ -1110,7 +1110,9 @@
       "REGION_GOLDENROD_DEPT_STORE_ELEVATOR"
     ],
     "locations": [],
-    "events": []
+    "events": [
+      "EVENT_MART_WATER_STONE"
+    ]
   },
   "REGION_GOLDENROD_DEPT_STORE_2F": {
     "johto": true,
@@ -4720,7 +4722,9 @@
       "REGION_VIOLET_CITY"
     ],
     "locations": [],
-    "events": []
+    "events": [
+      "EVENT_MART_ESCAPE_ROPE"
+    ]
   },
   "REGION_VIOLET_NICKNAME_SPEECH_HOUSE": {
     "johto": true,
