@@ -62,7 +62,8 @@ Many additional quality of life changes have been implemented:
 - Trade evolutions have been changed to make them possible in a solo run of the game:
     - Regular trade evolutions now evolve at level 40
     - Held item trade evolutions evolve when their evolution item is used on them, as you would an evolution stone
-- Espeon and Umbreon evolve with the Sun Stone and Moon Stone respectively.
+- Espeon and Umbreon evolve with the Sun Stone and Moon Stone respectively
+- The Celebi Event can be activated by giving the multiworld item GS-Ball to Kurt after clearing Slowpoke Well
 
 ## What does another world's item look like in Pokémon Crystal?
 
