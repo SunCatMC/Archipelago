@@ -93,15 +93,15 @@ class PokemonCrystalWorld(World):
                     and self.options.randomize_badges == RandomizeBadges.option_completely_random):
                 self.multiworld.local_early_items[self.player]["Storm Badge"] = 1
 
-        if self.options.randomize_badges != RandomizeBadges.option_completely_random:
-            if self.options.radio_tower_badges.value > 7 if self.options.johto_only else 15:
-                self.options.radio_tower_badges.value = 7 if self.options.johto_only else 15
-                logging.warning(
-                    "Pokemon Crystal: Radio Tower Badges >%d incompatible with vanilla or shuffled badges. "
-                    "Changing Radio Tower Badges to %d for player %s.",
-                    self.options.radio_tower_badges.value,
-                    self.options.radio_tower_badges.value,
-                    self.multiworld.get_player_name(self.player))
+        if (self.options.randomize_badges != RandomizeBadges.option_completely_random and
+            self.options.radio_tower_badges.value > 7 if self.options.johto_only else 15):
+            self.options.radio_tower_badges.value = 7 if self.options.johto_only else 15
+            logging.warning(
+                "Pokemon Crystal: Radio Tower Badges >%d incompatible with vanilla or shuffled badges. "
+                "Changing Radio Tower Badges to %d for player %s.",
+                self.options.radio_tower_badges.value,
+                self.options.radio_tower_badges.value,
+                self.multiworld.get_player_name(self.player))
 
         if self.options.johto_only:
             if self.options.goal == Goal.option_red and self.options.johto_only == JohtoOnly.option_on:
